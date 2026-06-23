@@ -311,6 +311,22 @@ section.about,
   .gallery{gap:0}
   .card{padding:30px 26px}
 }
+/* === Bąbelek czatu Facebook (Messenger) === */
+.fab-chat{position:fixed;right:22px;bottom:24px;z-index:70;display:flex;align-items:center;gap:0;
+  height:60px;padding:0;border-radius:34px;text-decoration:none;overflow:hidden;
+  background:linear-gradient(135deg,var(--gold),var(--gold-d));color:#fff;
+  box-shadow:0 14px 34px -10px rgba(0,0,0,.45);transition:padding .28s ease,transform .2s ease}
+.fab-chat .fab-ico{flex:0 0 60px;width:60px;height:60px;display:flex;align-items:center;justify-content:center}
+.fab-chat .fab-ico svg{width:30px;height:30px}
+.fab-chat .fab-txt{max-width:0;opacity:0;white-space:nowrap;font-weight:600;font-size:1rem;
+  transition:max-width .28s ease,opacity .2s ease,padding .28s ease}
+.fab-chat:hover{padding-right:22px}
+.fab-chat:hover .fab-txt{max-width:200px;opacity:1;padding-left:4px}
+.fab-chat::before{content:"";position:absolute;inset:0;border-radius:34px;
+  box-shadow:0 0 0 0 rgba(192,145,95,.55);animation:fabpulse 2.4s ease-out infinite}
+@keyframes fabpulse{0%{box-shadow:0 0 0 0 rgba(192,145,95,.5)}70%{box-shadow:0 0 0 16px rgba(192,145,95,0)}100%{box-shadow:0 0 0 0 rgba(192,145,95,0)}}
+@media(prefers-reduced-motion:reduce){.fab-chat::before{animation:none}}
+@media(max-width:880px){ .fab-chat{bottom:76px;right:16px;height:54px} .fab-chat .fab-ico{flex-basis:54px;width:54px;height:54px} .fab-chat .fab-txt{display:none} }
 </style>
 </head>
 <body class="cine">
@@ -398,6 +414,13 @@ section.about,
 </div></section>
 
 <a class="callbar" href="tel:+48536558869">📞 Zadzwoń: +48 536 558 869</a>
+
+<a class="fab-chat" href="https://www.facebook.com/p/Pazurkowy-Zak%C4%85tek-100088143236438/" target="_blank" rel="noopener" aria-label="Napisz do nas na Facebooku">
+  <span class="fab-ico" aria-hidden="true">
+    <svg viewBox="0 0 24 24" fill="#fff"><path d="M12 2C6.36 2 2 6.13 2 11.7c0 2.91 1.19 5.44 3.14 7.17.16.14.26.35.27.57l.05 1.78c.03.57.61.94 1.13.71l1.98-.87c.17-.08.36-.09.54-.04 0 0 1.13.31 2.79.31 5.64 0 10-4.13 10-9.7C24 6.13 19.64 2 12 2z"/><path fill="var(--gold-d)" d="m6.4 14.54 2.94-4.66c.47-.74 1.46-.92 2.16-.4l2.34 1.75c.21.16.5.16.71 0l3.16-2.4c.42-.32.97.18.69.62l-2.94 4.66c-.47.74-1.46.92-2.16.4l-2.34-1.75a.6.6 0 0 0-.71 0l-3.16 2.4c-.42.32-.97-.18-.69-.62z"/></svg>
+  </span>
+  <span class="fab-txt">Napisz do nas na Facebooku</span>
+</a>
 
 <footer>
   <div class="logo">Pazurkowy <span style="color:var(--gold)">Zakątek</span></div>
